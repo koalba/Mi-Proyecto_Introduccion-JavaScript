@@ -5,23 +5,23 @@ function iniciar() {
       tarjetas: grupoTarjetas[0].concat(grupoTarjetas[1]),
       movimientosMax: 8,
     },
-    // ,
-    // { tarjetas: grupoTarjetas[0].concat(grupoTarjetas[1], grupoTarjetas[2]) },
-    // {
-    //   tarjetas: grupoTarjetas[0].concat(
-    //     grupoTarjetas[1],
-    //     grupoTarjetas[2],
-    //     grupoTarjetas[3]
-    //   ),
-    // },
-    // {
-    //   tarjetas: grupoTarjetas[0].concat(
-    //     grupoTarjetas[1],
-    //     grupoTarjetas[2],
-    //     grupoTarjetas[3],
-    //     grupoTarjetas[4]
-    //   ),
-    // },
+    ,
+    { tarjetas: grupoTarjetas[0].concat(grupoTarjetas[1], grupoTarjetas[2]) },
+    {
+      tarjetas: grupoTarjetas[0].concat(
+        grupoTarjetas[1],
+        grupoTarjetas[2],
+        grupoTarjetas[3]
+      ),
+    },
+    {
+      tarjetas: grupoTarjetas[0].concat(
+        grupoTarjetas[1],
+        grupoTarjetas[2],
+        grupoTarjetas[3],
+        grupoTarjetas[4]
+      ),
+    },
   ];
 
   movimientos = 0;
