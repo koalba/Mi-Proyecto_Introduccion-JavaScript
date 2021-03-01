@@ -6,13 +6,17 @@ function iniciar() {
       movimientosMax: 8,
     },
     ,
-    { tarjetas: grupoTarjetas[0].concat(grupoTarjetas[1], grupoTarjetas[2]) },
+    {
+      tarjetas: grupoTarjetas[0].concat(grupoTarjetas[1], grupoTarjetas[2]),
+      movimientosMax: 16,
+    },
     {
       tarjetas: grupoTarjetas[0].concat(
         grupoTarjetas[1],
         grupoTarjetas[2],
         grupoTarjetas[3]
       ),
+      movimientosMax: 20,
     },
     {
       tarjetas: grupoTarjetas[0].concat(
@@ -21,6 +25,7 @@ function iniciar() {
         grupoTarjetas[3],
         grupoTarjetas[4]
       ),
+      movimientosMax: 22,
     },
   ];
 
