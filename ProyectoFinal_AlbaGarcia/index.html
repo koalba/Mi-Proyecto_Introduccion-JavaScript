@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Domestika</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="fonts/css/all.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="menu_principal" class="menu_principal visible">
+      <h1>- THE GAME -</h1>
+      <button class="reiniciar">Empezar el juego</button>
+      <p>¡Customiza las cartas!</p>
+      <ul>
+        <li>
+          <button id="tarjetaFrutas" class="selectButton selected">
+            Frutas
+          </button>
+        </li>
+        <li><button id="tarjetaModa" class="selectButton">Moda</button></li>
+        <li>
+          <button id="tarjetaAnimales" class="selectButton">Animales</button>
+        </li>
+        <li>
+          <button id="tarjetaNatural" class="selectButton">Natural</button>
+        </li>
+      </ul>
+    </div>
+    <div id="Interfaz">
+      <div class="menu_superior">
+        <div class="item_menu num_movimientos">
+          <p>MOVIMIENTOS</p>
+          <p><span id="mov">00</span>/<span id="mov_total">00</span></p>
+        </div>
+        <div class="item_menu vidas">
+          <ul id="misVidas"></ul>
+        </div>
+        <div class="item_menu puntuacion">
+          <p>MONEDAS</p>
+          <p><span class="puntuacion">100</span><i class="fas fa-coins"></i></p>
+        </div>
+      </div>
+      <div id="mesa" class="mesa"></div>
+      <div id="subeNivel" class="subeNivel">
+        <div class="modal">
+          <h2>¡Lo has conseguido!</h2>
+          <p>
+            ¡Muy bien, te has pasado el nivel!
+          </p>
+          <button class="avanzar">Siguiente nivel</button>
+          <button class="reiniciar">Reintentar</button>
+        </div>
+      </div>
+      <div id="gameOver" class="gameOver">
+        <div class="modal modalGameOver">
+          <h2>Oh no...</h2>
+          <p>Te has quedado sin vidas...</p>
+          <button class="reiniciar">Reintentar</button>
+        </div>
+      </div>
+      <div id="endGame" class="endGame">
+        <div class="modal">
+          <h2>¡Lo has conseguido!</h2>
+          <p>
+            ¡Te has pasado el juego!
+          </p>
+          <button class="reiniciar">Reintentar</button>
+        </div>
+      </div>
+      <div class="menu_inferior">
+        <div class="item_menu nivel_actual">
+          <p>lvl.<span id="lvl" class="lvl">01</span></p>
+        </div>
+        <div class="item_menu compra_vidas">
+          <p>
+            <i class="fas fa-heart"></i
+            ><span>-100<i class="fas fa-coins"></i></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/variables-globales.js"></script>
+    <script src="js/elige-tarjetas.js"></script>
+    <script src="js/baraja-reparte.js"></script>
+    <script src="js/descubrir-comparar.js"></script>
+    <script src="js/acierto-error.js"></script>
+    <script src="js/contador.js"></script>
+    <script src="js/cambia-nivel.js"></script>
+    <script src="js/finalizar.js"></script>
+    <script src="js/game-over.js"></script>
+    <script src="js/contador-vidas.js"></script>
+    <script src="js/puntuacion.js"></script>
+    <script src="js/compra-vidas.js"></script>
+    <script src="js/iniciar.js"></script>
+  </body>
+</html>

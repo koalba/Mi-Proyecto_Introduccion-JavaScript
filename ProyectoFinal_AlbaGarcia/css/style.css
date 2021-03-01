@@ -1,0 +1,399 @@
+:root {
+  --medium-green: #44c16e;
+  --light-green: #60e06d;
+  --lighter-green: #ddf8e0;
+  --main-gradient: linear-gradient(
+    30deg,
+    rgba(67, 193, 110, 1) 0%,
+    rgba(96, 224, 109, 1) 100%
+  );
+  --gray-gradient: linear-gradient(
+    0deg,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(240, 240, 240, 1) 100%
+  );
+  --dark-grey: #4d5655;
+  --light-grey: #f5f5f5;
+  --font: "Quicksand", sans-serif;
+}
+
+@keyframes error {
+  10%,
+  90% {
+    transform: rotateY(-180deg) translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: rotateY(-180deg) translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotateY(-180deg) translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: rotateY(-180deg) translateX(4px);
+  }
+}
+
+@keyframes acierto {
+  from {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: rotateY(-180deg) scale3d(1.1, 1.1, 1.1);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 0;
+  }
+}
+
+body {
+  margin: 0;
+  background-image: url(../item/pattern.jpg);
+  background-size: auto;
+  font-family: "Roboto Mono", monospace;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*---------MENU_PRINCIPAL---------*/
+
+#menu_principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  left: auto;
+  width: 100%;
+  height: 100%;
+  background-image: url(../item/pattern.jpg);
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu_principal h1 {
+  font-size: 100px;
+  word-spacing: -35px;
+  color: var(--medium-green);
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+#menu_principal .reiniciar {
+  width: 20%;
+  margin-bottom: 4rem;
+}
+
+#menu_principal ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#menu_principal li button {
+  width: auto;
+  text-align: left;
+  padding: 0.75rem 1.25rem;
+  margin: 1rem 0.5rem;
+  background-image: none;
+  background-color: inherit;
+  color: var(--medium-green);
+  border: solid 2px var(--medium-green);
+  transition: ease-in-out 0.25s;
+}
+
+#menu_principal li button:hover {
+  background-color: rgb(96, 224, 109, 0.25);
+  border: solid 2px var(--medium-green);
+}
+
+#menu_principal li button.selected {
+  background-color: var(--medium-green);
+  color: #fff;
+  cursor: auto;
+}
+
+#menu_principal li button.selected:hover,
+#menu_principal li button.selected:focus {
+  opacity: 1;
+}
+
+/*---------INTERFAZ---------*/
+
+#Interfaz {
+  font-size: 50px;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#Interfaz .menu_superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--medium-green);
+  color: #fff;
+  padding: 0 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15), 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#Interfaz .vidas ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#Interfaz .item_menu {
+  padding: 1rem 0.5rem;
+}
+
+#Interfaz .item_menu p {
+  line-height: 1em;
+}
+
+#Interfaz .menu_superior .item_menu p:first-of-type {
+  font-size: 14px;
+  color: var(--lighter-green);
+  font-weight: 500;
+}
+
+#Interfaz .vidas li {
+  color: var(--lighter-green);
+  padding: 0 0.5rem;
+}
+
+#Interfaz .menu_inferior {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--medium-green);
+  padding-bottom: 1rem;
+}
+
+#Interfaz .menu_inferior .nivel_actual {
+  font-size: 40px;
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
+#Interfaz .menu_inferior .compra_vidas {
+  opacity: 0.5;
+  padding: 0 1.5rem;
+}
+
+#Interfaz .menu_inferior .compra_vidas.active {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#Interfaz .menu_inferior .compra_vidas p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#Interfaz .menu_inferior .compra_vidas p span:last-child {
+  font-size: 1.75rem;
+}
+
+#Interfaz .menu_inferior .compra_vidas .fa-coins {
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+#Interfaz .menu_inferior .compra_vidas .fa-heart {
+  padding-right: 0.5rem;
+  line-height: 0.7;
+}
+
+/*---------MESA---------*/
+
+#mesa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  max-width: 56rem;
+  margin: auto;
+}
+
+#mesa .tarjeta {
+  width: 6rem;
+  height: 6rem;
+  margin: 0.5rem;
+  border-radius: 15%;
+  background-image: var(--main-gradient);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15), 4px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+#mesa .tarjeta_icono {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotateY(-180deg) translateZ(1px);
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  padding-top: 0.4rem;
+}
+
+#mesa .tarjeta_icono::selection {
+  background: transparent;
+}
+
+#mesa .tarjeta.descubierta {
+  transform: rotateY(-180deg);
+}
+
+.acertada {
+  pointer-events: none;
+}
+
+.acertada .tarjeta_icono {
+  animation: acierto 1.3s ease-in-out forwards;
+}
+
+.error {
+  animation: error 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.acertada.tarjeta {
+  backface-visibility: hidden;
+}
+
+#mesa .fa-star {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--medium-green);
+  border: 4px solid var(--medium-green);
+  padding: 1.1rem 1rem;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+
+/*---------FEEDBACK---------*/
+
+#subeNivel,
+#gameOver,
+#endGame {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;s
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  background-image: var(--main-gradient), url(../item/pattern.jpg);
+  background-blend-mode: multiply;
+}
+
+#menu_principal.visible, #subeNivel.visible,
+#gameOver.visible,
+#endGame.visible {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  background-color: #fff;
+  padding: 2rem 4.5rem 4.5rem 4.5rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15), 4px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal h2 {
+  text-transform: uppercase;
+  font-size: 2.75rem;
+  color: var(--medium-green);
+  margin-bottom: 0;
+}
+
+.modal p {
+  font-size: 1rem;
+  color: var(--dark-grey);
+  padding-bottom: 2rem;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background-image: var(--main-gradient);
+  padding: 0.75rem 0;
+  width: 80%;
+  border-radius: 5rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1;
+  transition: 0.3s;
+  margin: 0.5rem 0;
+}
+
+button:hover,
+button:focus {
+  opacity: 0.9;
+  outline: 0;
+}
+
+.modal .reiniciar {
+  position: absolute;
+  bottom: 0;
+  color: var(--medium-green);
+  background: transparent;
+  border: 0;
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin: 0;
+}
